@@ -1,0 +1,59 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": "container",
+  "height": 230,
+  "config": {
+    "background": "transparent",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#476056",
+      "titleColor": "#23382c",
+      "gridColor": "#e4e9e1",
+      "labelFont": "Inter",
+      "titleFont": "Inter"
+    },
+    "legend": {
+      "labelColor": "#30493b",
+      "titleColor": "#30493b"
+    }
+  },
+  "title": {
+    "text": "Threatened insect entries in supplied national list",
+    "subtitle": "30 Insecta entries in the uploaded extract; not the total insect conservation picture."
+  },
+  "data": {
+    "url": "data/threatened_status.csv"
+  },
+  "mark": {
+    "type": "bar",
+    "cornerRadiusEnd": 6,
+    "color": "#b57958"
+  },
+  "encoding": {
+    "x": {
+      "field": "Threatened status",
+      "type": "nominal",
+      "title": null,
+      "sort": [
+        "Critically Endangered",
+        "Endangered",
+        "Vulnerable"
+      ]
+    },
+    "y": {
+      "field": "species",
+      "type": "quantitative",
+      "title": "Insect entries"
+    },
+    "tooltip": [
+      {
+        "field": "Threatened status"
+      },
+      {
+        "field": "species"
+      }
+    ]
+  }
+}

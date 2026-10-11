@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Australia's Hidden Wings | FIT3179 Data Visualisation 2</title>
+<meta name="description" content="Explore 2023–2025 butterfly, moth, bee, wasp, ant, dragonfly and damselfly observation records across Australia.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/vega@6"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@6"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@7"></script>
+</head><body>
+<nav class="nav"><a class="logo" href="#top">✳ Hidden Wings<span> / Australia</span></a><div><a href="#maps">The maps</a><a href="#patterns">Patterns</a><a href="#methods">Sources & methods</a></div></nav>
+<header class="hero" id="top"><div class="hero-inner"><span class="eyebrow">FIT3179 · Data Visualisation 2 · 2026</span>
+<h1>Australia's<br><em>Hidden Wings.</em></h1>
+<p class="lede">Where do we record insects in Australia, how does that change throughout the year, and why should we care?</p>
+<div class="pillrow"><span>Butterflies & moths</span><span>Bees, ants & wasps</span><span>Dragonflies & damselflies</span></div>
+<a href="#story" class="cta">Explore the evidence ↓</a></div><div class="hero-art" aria-hidden="true"><div class="wing wing-a">◈</div><div class="wing wing-b">✳</div><div class="wing wing-c">◈</div><div class="orbit"></div></div></header>
+<main>
+<section class="intro section" id="story"><div class="section-label">01 / THE STORY</div><h2>Small creatures.<br>Extraordinary ecosystems.</h2>
+<div class="two-col"><p>Insects are vital to pollination, food webs, nutrient recycling and freshwater ecosystems. Yet the places we observe them tell only part of the story: biodiversity recording depends on the effort of observers as well as the insects themselves.</p><p>This website explores three orders in Atlas of Living Australia (ALA) occurrence exports from 2023–2025. We compare <strong>recorded</strong> locations, distinct species-level names and observation timing—not absolute animal populations.</p></div>
+<div class="stats"><div><b id="total-records">631,023</b><small>filtered occurrence records</small></div><div><b>3</b><small>insect orders with geographic records</small></div><div><b>2023–25</b><small>common observation window</small></div></div>
+</section>
+<section class="section" id="maps"><div class="section-label">02 / WHERE</div><h2>Mapping the records</h2><p class="section-intro">Three complementary map idioms answer different questions. Use each map's insect-order dropdown to compare groups.</p>
+<article class="viz large"><div class="viz-kicker">MAP 01 · CHOROPLETH</div><h3>Recorded species by state</h3><p>Darker states represent more distinct species-rank names in the filtered data. Geographic boundaries are provided by a third-party Australian states GeoJSON.</p><div id="c01" class="chart"></div><p class="note">Caution: species counts depend on observation effort, naming and geographic coverage.</p></article>
+<div class="two-viz"><article class="viz"><div class="viz-kicker">MAP 02 · DOT MAP</div><h3>Where people spotted insects</h3><p>A fixed, reproducible sample of observations illustrates geographic coverage. Dot density in this sample is not a population estimate.</p><div id="c02" class="chart"></div></article>
+<article class="viz"><div class="viz-kicker">MAP 03 · PROPORTIONAL SYMBOL</div><h3>Reporting volumes</h3><p>The area of each circle represents observation records associated with that state. Approximate state centres are used to place the bubbles.</p><div id="c03" class="chart"></div></article></div>
+</section>
+<section class="section" id="patterns"><div class="section-label">03 / COMPARISONS</div><h2>The rhythms of observation</h2><p class="section-intro">Different insect orders leave different footprints in biodiversity databases. The following charts explore those differences over space and time.</p>
+<div class="two-viz">
+<article class="viz"><div class="viz-kicker">CHART 04</div><div id="c04" class="chart"></div><p class="note">These are species-rank scientific names appearing in the three occurrence exports, not national species inventories.</p></article>
+<article class="viz"><div class="viz-kicker">CHART 05</div><div id="c05" class="chart"></div><p class="note">A rising line means more records were submitted, not necessarily that insects became more abundant.</p></article>
+<article class="viz"><div class="viz-kicker">CHART 06</div><div id="c06" class="chart"></div><p class="note">Months are combined across all three years to reveal seasonality.</p></article>
+<article class="viz"><div class="viz-kicker">CHART 07</div><div id="c07" class="chart"></div><p class="note">The monthly time series preserves differences between 2023, 2024 and 2025.</p></article>
+</div><article class="viz large"><div class="viz-kicker">CHART 08 · GEOGRAPHIC COMPARISON</div><div id="c08" class="chart"></div><p class="note">Totals are raw record counts. This highlights differences in observation activity, not adjusted insect abundance.</p></article>
+</section>
+<section class="section"><div class="section-label">04 / BROADER CONTEXT</div><h2>More than a count.</h2><p class="section-intro">Two additional uploaded files expand the story: an ALA species checklist and an Australian threatened-species extract. They have different scopes and must be interpreted separately from the occurrence data.</p>
+<div class="two-viz">
+<article class="viz"><div class="viz-kicker">CHART 09 · CHECKLIST</div><div id="c09" class="chart"></div><p class="note">The checklist includes Coleoptera (beetles), unlike the three geographic ZIPs.</p></article>
+<article class="viz"><div class="viz-kicker">CHART 10 · THREATENED SPECIES</div><div id="c10" class="chart"></div><p class="note">Counts are limited to entries labelled Insecta in the supplied threatened-species file.</p></article>
+</div>
+<article class="viz large"><div class="viz-kicker">CHART 11 · INDEPENDENT ALA SUMMARY</div><div id="c11" class="chart"></div><p class="note">This separately supplied 2023–2025 monthly summary is shown on its own because it was produced using a different export/aggregation process. Do not combine its values arithmetically with the three ZIP exports.</p></article>
+<div class="eco"><h3>Why insects matter</h3><div class="three-col"><div><span>01</span><h4>Pollination</h4><p>Many bees, butterflies and moths move pollen between flowers, helping plants reproduce.</p></div><div><span>02</span><h4>Food webs</h4><p>Insects feed birds, reptiles and other animals, linking plants, soil and higher consumers.</p></div><div><span>03</span><h4>Freshwater health</h4><p>Dragonflies and damselflies spend parts of their lives in freshwater habitats and are tied to wetland ecosystems.</p></div></div></div>
+</section>
+<section class="section methods" id="methods"><div class="section-label">05 / TRANSPARENCY</div><h2>How to read this evidence</h2><div class="two-col"><div><h3>Sources</h3><p>ALA occurrence downloads: <a href="https://doi.org/10.26197/ala.7f987737-cfe8-4755-8888-a3f9dc9ac02f" target="_blank" rel="noopener">Lepidoptera</a>, <a href="https://doi.org/10.26197/ala.6d3995a2-71c7-4a7f-a55d-4393f5f22ded" target="_blank" rel="noopener">Hymenoptera</a>, and <a href="https://doi.org/10.26197/ala.b7db76a0-7501-4f32-83d0-beaec3490e81" target="_blank" rel="noopener">Odonata</a>. Also uses the provided ALA species checklist and ALA monthly summary, and a separate threatened-species CSV whose publisher should be confirmed before final submission.</p><p>Map outlines: <a href="https://github.com/rowanhogan/australian-states" target="_blank" rel="noopener">rowanhogan/australian-states</a> GeoJSON; check attribution/licensing before final submission.</p></div>
+<div><h3>Methods and limitations</h3><p>Occurrence observations were limited to 2023–2025, valid months and approximate Australian latitude/longitude bounds. Species richness counts distinct nonblank scientific names with <code>taxonRank = species</code>; these are not a reconciled taxonomic checklist. The dot map is a seeded subsample of up to 700 records per group per year. State circles indicate administrative totals rather than exact locations.</p><p><strong>Data warning:</strong> Public reporting effort, identification quality and survey methods are uneven. The separate 2023–2025 monthly CSV contains beetles and may not match the filtered ZIP totals. This draft is intended for tutor critique and should be refined after feedback.</p></div></div>
+<p class="credits">Chart specifications are human-readable JSON in the <a href="charts/">charts/</a> folder. This web page uses Vega-Lite and Vega-Embed. <a href="README.md">Project notes</a>.</p>
+</section></main><footer><span>Australia's Hidden Wings · Student visualisation draft</span><a href="#top">Back to top ↑</a></footer>
+<script src="main.js"></script></body></html>

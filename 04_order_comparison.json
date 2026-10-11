@@ -1,0 +1,74 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": "container",
+  "height": 240,
+  "config": {
+    "background": "transparent",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#476056",
+      "titleColor": "#23382c",
+      "gridColor": "#e4e9e1",
+      "labelFont": "Inter",
+      "titleFont": "Inter"
+    },
+    "legend": {
+      "labelColor": "#30493b",
+      "titleColor": "#30493b"
+    }
+  },
+  "title": "Recorded species names by insect order",
+  "data": {
+    "url": "data/overview.csv"
+  },
+  "mark": {
+    "type": "bar",
+    "cornerRadiusEnd": 5
+  },
+  "encoding": {
+    "x": {
+      "field": "species",
+      "type": "quantitative",
+      "title": "Species-rank scientific names"
+    },
+    "y": {
+      "field": "group",
+      "type": "nominal",
+      "sort": "-x",
+      "title": null
+    },
+    "color": {
+      "field": "group",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Lepidoptera",
+          "Hymenoptera",
+          "Odonata"
+        ],
+        "range": [
+          "#dca64a",
+          "#66b9c5",
+          "#b18cd4"
+        ]
+      },
+      "title": "Insect order",
+      "legend": null
+    },
+    "tooltip": [
+      {
+        "field": "group"
+      },
+      {
+        "field": "species",
+        "format": ","
+      },
+      {
+        "field": "records",
+        "format": ","
+      }
+    ]
+  }
+}

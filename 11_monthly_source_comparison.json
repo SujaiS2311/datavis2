@@ -1,0 +1,62 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": "container",
+  "height": 250,
+  "config": {
+    "background": "transparent",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#476056",
+      "titleColor": "#23382c",
+      "gridColor": "#e4e9e1",
+      "labelFont": "Inter",
+      "titleFont": "Inter"
+    },
+    "legend": {
+      "labelColor": "#30493b",
+      "titleColor": "#30493b"
+    }
+  },
+  "title": {
+    "text": "Four orders in the separate ALA monthly summary",
+    "subtitle": "A different ALA extract; totals should not be merged with the occurrence ZIPs."
+  },
+  "data": {
+    "url": "data/original_monthly_summary.csv"
+  },
+  "mark": {
+    "type": "line",
+    "point": true
+  },
+  "encoding": {
+    "x": {
+      "field": "month_number",
+      "type": "ordinal",
+      "title": "Month"
+    },
+    "y": {
+      "field": "occurrence_records",
+      "type": "quantitative",
+      "title": "Records"
+    },
+    "color": {
+      "field": "order",
+      "type": "nominal",
+      "title": "Order"
+    },
+    "tooltip": [
+      {
+        "field": "order"
+      },
+      {
+        "field": "month"
+      },
+      {
+        "field": "occurrence_records",
+        "format": ","
+      }
+    ]
+  }
+}

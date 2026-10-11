@@ -1,0 +1,25 @@
+state,group,records,species,longitude,latitude,state_name,key
+ACT,Hymenoptera,5722,237,149.1,-35.3,Australian Capital Territory,Australian Capital Territory|Hymenoptera
+ACT,Lepidoptera,19173,1140,149.1,-35.3,Australian Capital Territory,Australian Capital Territory|Lepidoptera
+ACT,Odonata,2137,52,149.1,-35.3,Australian Capital Territory,Australian Capital Territory|Odonata
+NSW,Hymenoptera,19834,647,147.0,-33.3,New South Wales,New South Wales|Hymenoptera
+NSW,Lepidoptera,92324,2810,147.0,-33.3,New South Wales,New South Wales|Lepidoptera
+NSW,Odonata,17519,130,147.0,-33.3,New South Wales,New South Wales|Odonata
+NT,Hymenoptera,1302,122,133.5,-19.7,Northern Territory,Northern Territory|Hymenoptera
+NT,Lepidoptera,8443,584,133.5,-19.7,Northern Territory,Northern Territory|Lepidoptera
+NT,Odonata,4998,80,133.5,-19.7,Northern Territory,Northern Territory|Odonata
+QLD,Hymenoptera,19868,726,145.0,-21.4,Queensland,Queensland|Hymenoptera
+QLD,Lepidoptera,179467,3685,145.0,-21.4,Queensland,Queensland|Lepidoptera
+QLD,Odonata,50050,205,145.0,-21.4,Queensland,Queensland|Odonata
+SA,Hymenoptera,8317,347,135.8,-30.0,South Australia,South Australia|Hymenoptera
+SA,Lepidoptera,17683,900,135.8,-30.0,South Australia,South Australia|Lepidoptera
+SA,Odonata,2868,35,135.8,-30.0,South Australia,South Australia|Odonata
+TAS,Hymenoptera,4549,184,146.7,-42.0,Tasmania,Tasmania|Hymenoptera
+TAS,Lepidoptera,10357,817,146.7,-42.0,Tasmania,Tasmania|Lepidoptera
+TAS,Odonata,1096,29,146.7,-42.0,Tasmania,Tasmania|Odonata
+VIC,Hymenoptera,25089,472,144.6,-37.2,Victoria,Victoria|Hymenoptera
+VIC,Lepidoptera,104324,2012,144.6,-37.2,Victoria,Victoria|Lepidoptera
+VIC,Odonata,15472,69,144.6,-37.2,Victoria,Victoria|Odonata
+WA,Hymenoptera,5081,317,121.7,-25.6,Western Australia,Western Australia|Hymenoptera
+WA,Lepidoptera,12143,927,121.7,-25.6,Western Australia,Western Australia|Lepidoptera
+WA,Odonata,3181,66,121.7,-25.6,Western Australia,Western Australia|Odonata

@@ -1,0 +1,105 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": "container",
+  "height": 370,
+  "config": {
+    "background": "transparent",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#476056",
+      "titleColor": "#23382c",
+      "gridColor": "#e4e9e1",
+      "labelFont": "Inter",
+      "titleFont": "Inter"
+    },
+    "legend": {
+      "labelColor": "#30493b",
+      "titleColor": "#30493b"
+    }
+  },
+  "title": {
+    "text": "Where observations were submitted",
+    "subtitle": "Reproducible 2,100-record sample per order (700/year); not all observations."
+  },
+  "projection": {
+    "type": "mercator",
+    "center": [
+      134,
+      -26
+    ],
+    "scale": 640
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.min.geojson",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#eef2eb",
+        "stroke": "#c5d1ca",
+        "strokeWidth": 0.7
+      }
+    },
+    {
+      "data": {
+        "url": "data/points_sample.csv"
+      },
+      "params": [
+        {
+          "name": "pickOrder",
+          "value": "Lepidoptera",
+          "bind": {
+            "input": "select",
+            "options": [
+              "Lepidoptera",
+              "Hymenoptera",
+              "Odonata"
+            ]
+          }
+        }
+      ],
+      "transform": [
+        {
+          "filter": "datum.group === pickOrder"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "opacity": 0.35,
+        "size": 18,
+        "color": "#de904a"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "decimalLongitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "decimalLatitude",
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "scientificName",
+            "title": "Recorded taxon"
+          },
+          {
+            "field": "state",
+            "title": "State"
+          },
+          {
+            "field": "year",
+            "title": "Year"
+          }
+        ]
+      }
+    }
+  ]
+}

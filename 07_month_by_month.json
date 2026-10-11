@@ -1,0 +1,80 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": "container",
+  "height": 250,
+  "config": {
+    "background": "transparent",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#476056",
+      "titleColor": "#23382c",
+      "gridColor": "#e4e9e1",
+      "labelFont": "Inter",
+      "titleFont": "Inter"
+    },
+    "legend": {
+      "labelColor": "#30493b",
+      "titleColor": "#30493b"
+    }
+  },
+  "title": "Monthly records across the three years",
+  "data": {
+    "url": "data/year_month.csv"
+  },
+  "mark": {
+    "type": "line",
+    "strokeWidth": 2
+  },
+  "transform": [
+    {
+      "calculate": "datetime(datum.year, datum.month - 1, 1)",
+      "as": "date"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "temporal",
+      "title": "Observation month"
+    },
+    "y": {
+      "field": "records",
+      "type": "quantitative",
+      "title": "Records"
+    },
+    "color": {
+      "field": "group",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Lepidoptera",
+          "Hymenoptera",
+          "Odonata"
+        ],
+        "range": [
+          "#dca64a",
+          "#66b9c5",
+          "#b18cd4"
+        ]
+      },
+      "title": "Insect order"
+    },
+    "tooltip": [
+      {
+        "field": "group"
+      },
+      {
+        "field": "year"
+      },
+      {
+        "field": "month"
+      },
+      {
+        "field": "records",
+        "format": ","
+      }
+    ]
+  }
+}

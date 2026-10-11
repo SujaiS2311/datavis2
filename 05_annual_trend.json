@@ -1,0 +1,75 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": "container",
+  "height": 270,
+  "config": {
+    "background": "transparent",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#476056",
+      "titleColor": "#23382c",
+      "gridColor": "#e4e9e1",
+      "labelFont": "Inter",
+      "titleFont": "Inter"
+    },
+    "legend": {
+      "labelColor": "#30493b",
+      "titleColor": "#30493b"
+    }
+  },
+  "title": "Annual occurrence records, 2023\u20132025",
+  "data": {
+    "url": "data/yearly.csv"
+  },
+  "mark": {
+    "type": "line",
+    "point": {
+      "filled": true,
+      "size": 76
+    },
+    "strokeWidth": 3
+  },
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "ordinal",
+      "title": "Observation year"
+    },
+    "y": {
+      "field": "records",
+      "type": "quantitative",
+      "title": "Records"
+    },
+    "color": {
+      "field": "group",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Lepidoptera",
+          "Hymenoptera",
+          "Odonata"
+        ],
+        "range": [
+          "#dca64a",
+          "#66b9c5",
+          "#b18cd4"
+        ]
+      },
+      "title": "Insect order"
+    },
+    "tooltip": [
+      {
+        "field": "group"
+      },
+      {
+        "field": "year"
+      },
+      {
+        "field": "records",
+        "format": ","
+      }
+    ]
+  }
+}

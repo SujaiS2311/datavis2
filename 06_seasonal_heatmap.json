@@ -1,0 +1,76 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": "container",
+  "height": 180,
+  "config": {
+    "background": "transparent",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#476056",
+      "titleColor": "#23382c",
+      "gridColor": "#e4e9e1",
+      "labelFont": "Inter",
+      "titleFont": "Inter"
+    },
+    "legend": {
+      "labelColor": "#30493b",
+      "titleColor": "#30493b"
+    }
+  },
+  "title": "Seasonal pattern across insect orders",
+  "data": {
+    "url": "data/seasonality.csv"
+  },
+  "mark": {
+    "type": "rect",
+    "cornerRadius": 2
+  },
+  "encoding": {
+    "x": {
+      "field": "month",
+      "type": "ordinal",
+      "sort": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "title": "Month (January = 1)"
+    },
+    "y": {
+      "field": "group",
+      "type": "nominal",
+      "title": null
+    },
+    "color": {
+      "field": "records",
+      "type": "quantitative",
+      "scale": {
+        "scheme": "tealblues"
+      },
+      "title": "Records (3 years)"
+    },
+    "tooltip": [
+      {
+        "field": "group"
+      },
+      {
+        "field": "month"
+      },
+      {
+        "field": "records",
+        "format": ","
+      }
+    ]
+  }
+}

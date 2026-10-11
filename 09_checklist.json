@@ -1,0 +1,56 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": "container",
+  "height": 240,
+  "config": {
+    "background": "transparent",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#476056",
+      "titleColor": "#23382c",
+      "gridColor": "#e4e9e1",
+      "labelFont": "Inter",
+      "titleFont": "Inter"
+    },
+    "legend": {
+      "labelColor": "#30493b",
+      "titleColor": "#30493b"
+    }
+  },
+  "title": {
+    "text": "The wider taxonomic checklist",
+    "subtitle": "The supplied ALA checklist includes beetles, unlike the three geographic exports."
+  },
+  "data": {
+    "url": "data/checklist_orders.csv"
+  },
+  "mark": {
+    "type": "bar",
+    "cornerRadiusEnd": 5,
+    "color": "#598c81"
+  },
+  "encoding": {
+    "x": {
+      "field": "species",
+      "type": "quantitative",
+      "title": "Named taxa in checklist"
+    },
+    "y": {
+      "field": "group",
+      "type": "nominal",
+      "sort": "-x",
+      "title": null
+    },
+    "tooltip": [
+      {
+        "field": "group"
+      },
+      {
+        "field": "species",
+        "format": ","
+      }
+    ]
+  }
+}

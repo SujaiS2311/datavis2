@@ -1,0 +1,62 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": "container",
+  "height": 265,
+  "config": {
+    "background": "transparent",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#476056",
+      "titleColor": "#23382c",
+      "gridColor": "#e4e9e1",
+      "labelFont": "Inter",
+      "titleFont": "Inter"
+    },
+    "legend": {
+      "labelColor": "#30493b",
+      "titleColor": "#30493b"
+    }
+  },
+  "title": "Where most records come from",
+  "data": {
+    "url": "data/state_group.csv"
+  },
+  "mark": {
+    "type": "rect",
+    "cornerRadius": 3
+  },
+  "encoding": {
+    "x": {
+      "field": "state",
+      "type": "nominal",
+      "title": "State or territory"
+    },
+    "y": {
+      "field": "group",
+      "type": "nominal",
+      "title": null
+    },
+    "color": {
+      "field": "records",
+      "type": "quantitative",
+      "scale": {
+        "scheme": "goldgreen"
+      },
+      "title": "Records"
+    },
+    "tooltip": [
+      {
+        "field": "state_name"
+      },
+      {
+        "field": "group"
+      },
+      {
+        "field": "records",
+        "format": ","
+      }
+    ]
+  }
+}
