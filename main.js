@@ -5,6 +5,6 @@ const charts = [
 ["c09","09_checklist"],["c10","10_threatened"],["c11","11_monthly_source_comparison"]
 ];
 for (const [element, name] of charts) {
-  vegaEmbed("#"+element, "charts/"+name+".json", {actions: {export:true,source:false,compiled:false,editor:false}})
+  vegaEmbed("#"+element, name+".json", {actions: {export:true,source:false,compiled:false,editor:false}})
     .catch(error => { console.error(name,error); document.getElementById(element).textContent = "Chart unavailable: " + error.message; });
 }
